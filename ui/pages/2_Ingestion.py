@@ -270,6 +270,9 @@ job_runners = api_client.get_job_runners()
 job_execution = col2.selectbox("Job Execution:", job_runners)
 uploaded_files = col2.file_uploader("Choose a file(s) :file_folder:", accept_multiple_files=True)
 
+# Add a new button labeled "Refresh Page" to the col2 column
+if col2.button("Refresh Page", key="refresh_page"):
+    st.experimental_rerun()
 
 st.session_state.num_threads = number_threads
 st.session_state.job_id = None
